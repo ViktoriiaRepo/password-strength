@@ -1,0 +1,31 @@
+<div class="indicator-container">
+  <div
+    class="part"
+    [ngClass]="{
+      gray: passwordStrength === 'empty',
+      red: passwordStrength === 'easy' || passwordStrength === 'short',
+      yellow: passwordStrength === 'medium',
+      green: passwordStrength === 'strong'
+    }"
+  ></div>
+  <div
+    class="part"
+    [ngClass]="{
+      gray: passwordStrength === 'empty' || passwordStrength === 'easy',
+      yellow: passwordStrength === 'medium',
+      red: passwordStrength === 'short',
+      green: passwordStrength === 'strong'
+    }"
+  ></div>
+  <div
+    class="part"
+    [ngClass]="{
+      gray:
+        passwordStrength === 'empty' ||
+        passwordStrength === 'easy' ||
+        passwordStrength === 'medium',
+      red: passwordStrength === 'short',
+      green: passwordStrength === 'strong'
+    }"
+  ></div>
+</div>
